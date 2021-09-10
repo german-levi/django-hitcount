@@ -122,7 +122,7 @@ class Hit(models.Model):
     """
     created = models.DateTimeField(editable=False, auto_now_add=True, db_index=True)
     ip = models.CharField(max_length=40, editable=False, db_index=True)
-    session = models.CharField(max_length=40, editable=False, db_index=True)
+    session = models.TextField()
     user_agent = models.CharField(max_length=255, editable=False)
     user = models.ForeignKey(AUTH_USER_MODEL, null=True, editable=False, on_delete=models.CASCADE)
     hitcount = models.ForeignKey(MODEL_HITCOUNT, editable=False, on_delete=models.CASCADE)
